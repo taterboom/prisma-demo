@@ -8,7 +8,8 @@
     "gen": "prisma generate",
     "dev:server": "npx ts-node trpc.ts",
     "dev:client": "npx esbuild client/client.ts --bundle --outfile=client/client.js --servedir=client",
-    "dev:graphql": "npx ts-node graphql/endpoint.ts"
+    "dev:graphql": "npx ts-node graphql/endpoint.ts",
+    "start": "npx prisma migrate deploy && npm run dev:server"
   },
   "keywords": [],
   "author": "",

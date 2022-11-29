@@ -10,8 +10,11 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run gen
-RUN npx prisma migrate deploy
+# RUN npx prisma migrate deploy
+
+ENV DATABASE_URL="file:/app/.prisma-demo/dev.db"
+# VOLUME [ "~/.prisma-demo/", "/app/.prisma-demo" ]
 
 EXPOSE 4000
 
-CMD ["npm", "run", "dev:server"]
+CMD ["npm", "run", "start"]
