@@ -9,7 +9,7 @@
     "dev:server": "npx ts-node trpc.ts",
     "dev:client": "npx esbuild client/client.ts --bundle --outfile=client/client.js --servedir=client",
     "dev:graphql": "npx ts-node graphql/endpoint.ts",
-    "start": "npx prisma migrate deploy && npm run dev:server"
+    "start": "npx prisma migrate deploy && (npm run dev:server & npx prisma studio)"
   },
   "keywords": [],
   "author": "",

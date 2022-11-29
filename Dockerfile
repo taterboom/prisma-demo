@@ -15,6 +15,6 @@ RUN npm run gen
 ENV DATABASE_URL="file:/app/.prisma-demo/dev.db"
 # VOLUME [ "~/.prisma-demo/", "/app/.prisma-demo" ]
 
-EXPOSE 4000
+EXPOSE 4000 5555
 
 CMD ["npm", "run", "start"]
